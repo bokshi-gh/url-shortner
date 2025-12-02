@@ -1,6 +1,6 @@
 # URL Shortner
 
-A full stack URL Shortner written in Go.
+A completely free Open Source URL Shortner written in Go.
 
 ## Features
 
@@ -11,3 +11,4 @@ A full stack URL Shortner written in Go.
 - **Frontend:** HTML, CSS and JavaScript
 - **Backend:** Go
 - **Database:** MySQL
+
