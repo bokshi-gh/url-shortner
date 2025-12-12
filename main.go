@@ -16,7 +16,7 @@ func main() {
 
 	// http.HandleFunc("/add-url", handlers.AddURLHandler)
 	// http.HandleFunc("/delete-url", handlers.DeleteURLHandler)
-	// http.HandleFunc("/r/", handlers.RedirectURL)
+	// http.HandleFunc("/r/", handlers.RedirectURLHandler)
 
 
 	fs := http.FileServer(http.Dir("./static"))

@@ -1,6 +1,5 @@
 header {
 	display: flex;
-	flex-direction: column;
 	gap: 0.3rem;
 }
 
@@ -8,17 +7,12 @@ header .username {
 	font-weight: bolder;
 }
 
-header .links {
-	display: flex;
-	gap: 0.5rem;
-}
-
-.add {
+form {
 	display: flex;
 	gap: 0.3rem;
 }
 
-.add input {
+form input {
 	padding: 0.2rem;
 }
 
@@ -28,7 +22,7 @@ table {
 
 table, th, td {
 	padding: 0.5rem;
-	border: 1.5px solid black;
+	border: 1px solid #c0c0c0;
 	border-collapse: collapse;
 	word-break: break-all;
 }

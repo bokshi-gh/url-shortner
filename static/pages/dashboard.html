@@ -5,8 +5,8 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" type="" href="../css/global.css" />
-	<link rel="stylesheet" type="" href="../css/home.css" />
-	<title>URL Shortner - Home</title>
+	<link rel="stylesheet" type="" href="../css/dashboard.css" />
+	<title>URL Shortner - Dashboard</title>
 </head>
 
 <body>
@@ -17,18 +17,13 @@
 		</nav>
 
 		<header>
-			<div class="username">@bokshi</div>
-			<div class="links">
-				<a href="">Delete Acccount</a>
-				|
-				<a href="">Change Password</a>
-			</div>
+			<div class="username">@bokshi</div> | <a href="">Delete Acccount</a>
 		</header>
 
-		<div class="add">
-			<input type="url" name="" value="" placeholder="URL">
-			<button type="button">Add URL +</button>
-		</div>
+		<form>
+			<input type="url" name="" value="" placeholder="URL" required>
+			<button type="submit">Add URL +</button>
+		</form>
 
 		<table>
 			<tr>
@@ -43,7 +38,6 @@
 				<td><a href="">https://url-shortner.dedyn.io/sdA5hde</a></td>
 				<td>20k</td>
 				<td>
-					<button type="button">Edit</button>
 					<button type="button">Delete</button>
 				</td>
 			</tr>
