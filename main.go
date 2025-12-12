@@ -6,19 +6,17 @@ import (
 	"os"
 	"path/filepath"
 
-	"url-shortner/api"
+	"url-shortner/handlers"
 )
 
 func main() {
-	http.HandleFunc("/api/register", api.RegisterHandler)
-	http.HandleFunc("/api/login", api.LoginHandler)
-	// http.HandleFunc("/api/change-username", api.ChangeUsernameHandler)
-	// http.HandleFunc("/api/change-password", api.ChangePasswordHandler)
-	http.HandleFunc("/api/delete-account", api.DeleteAccountHandler)
+	http.HandleFunc("/register", handlers.RegisterHandler)
+	// http.HandleFunc("/login", handlers.LoginHandler)
+	// http.HandleFunc("/delete-account", handlers.DeleteAccountHandler)
 
-	http.HandleFunc("/api/add-url", api.AddURLHandler)
-	// http.HandleFunc("/api/change-url", api.ChangeURLHandler)
-	http.HandleFunc("/api/delete-url", api.DeleteURLHandler)
+	// http.HandleFunc("/add-url", handlers.AddURLHandler)
+	// http.HandleFunc("/delete-url", handlers.DeleteURLHandler)
+	// http.HandleFunc("/r/", handlers.RedirectURL)
 
 
 	fs := http.FileServer(http.Dir("./static"))
