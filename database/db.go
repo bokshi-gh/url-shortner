@@ -2,21 +2,39 @@ package database
 
 import (
     "database/sql"
+    "fmt"
     "log"
+    "os"
 
     _ "github.com/go-sql-driver/mysql"
+    "github.com/joho/godotenv"
 )
 
 var DB *sql.DB
 
 func Connect() {
-    var err error
-    DB, err = sql.Open("mysql", "root:password@tcp(127.0.0.1:3306)/mydb")
+    err := godotenv.Load()
     if err != nil {
-        log.Fatal(err)
+        log.Fatal("Error loading .env file")
     }
+
+    dbUser := os.Getenv("DB_USER")
+    dbPass := os.Getenv("DB_PASS")
+    dbHost := os.Getenv("DB_HOST")
+    dbPort := os.Getenv("DB_PORT")
+    dbName := os.Getenv("DB_NAME")
+
+    dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", dbUser, dbPass, dbHost, dbPort, dbName)
+
+    DB, err = sql.Open("mysql", dsn)
+    if err != nil {
+        log.Fatal("Error opening database:", err)
+    }
+
     if err = DB.Ping(); err != nil {
-        log.Fatal(err)
+        log.Fatal("Error pinging database:", err)
     }
+
+    fmt.Println("Database connected successfully!")
 }
 
