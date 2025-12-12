@@ -40,6 +40,10 @@ let registerUser = async function(options) {
 
 		window.location.pathname = "pages/login.html";
 	}
+	else {
+		error.textContent = "Some error occured while registering the account!";
+		error.style.display = "block";
+	}
 }
 
 
